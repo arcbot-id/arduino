@@ -15,7 +15,8 @@
 NewPing sonar (trigPin, echoPin, 30);
 
 //setup procedure; only run once in the beginning
-void setup() {
+void setup()
+{
   //debugging purpose only
   Serial.begin (9600);
 
@@ -34,49 +35,62 @@ void setup() {
 void loop() {
   long distance = sonar.ping_cm();
 
-  if (distance <= 30) {
+  if (distance <= 30)
+  {
     digitalWrite(led_1, HIGH);
   }
-  else {
+  else
+  {
     digitalWrite(led_1,LOW);
   }
 
-  if (distance < 25) {
+  if (distance < 25)
+  {
       digitalWrite(led_2, HIGH);
   }
-  else {
+  else
+  {
       digitalWrite(led_2, LOW);
   }
 
-  if (distance < 20) {
+  if (distance < 20)
+  {
       digitalWrite(led_3, HIGH);
   }
-  else {
+  else
+  {
     digitalWrite(led_3, LOW);
   }
 
-  if (distance < 15) {
+  if (distance < 15)
+  {
     digitalWrite(led_4, HIGH);
   }
-  else {
+  else
+  {
     digitalWrite(led_4,LOW);
   }
 
-  if (distance < 10) {
+  if (distance < 10)
+  {
     digitalWrite(led_5, HIGH);
   }
-  else {
+  else
+  {
     digitalWrite(led_5,LOW);
   }
 
-  if (distance < 5) {
+  if (distance < 5)
+  {
     digitalWrite(led_6, HIGH);
   }
-  else {
+  else
+  {
     digitalWrite(led_6,LOW);
   }
 
-  if (distance <= 0){
+  if (distance <= 0)
+  {
     digitalWrite(led_1,LOW);
     digitalWrite(led_2,LOW);
     digitalWrite(led_3,LOW);
@@ -85,10 +99,12 @@ void loop() {
     digitalWrite(led_6,LOW);
   }
 
-  if (distance > 30){
+  if (distance > 30)
+  {
     Serial.println(“Out of range”);
   }
-  else {
+  else
+  {
     Serial.print(distance);
     Serial.println(” cm”);
   }
